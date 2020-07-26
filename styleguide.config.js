@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
     title: "Sophon Components Library",
-    components: 'src/components/**/*.tsx',
+    components: 'src/components/**/*.{js,jsx,ts,tsx}',
     styleguideDir: "dist-docs",
     moduleAliases: {
         "sophon-components-library": path.resolve(__dirname, "src")
@@ -15,15 +15,30 @@ module.exports = {
                 {
                     test: /\.[jt]sx?$/,
                     exclude: /node_modules/,
-                    loader: 'babel-loader',
+                    use: [
+                        'babel-loader',
+                    ]
+                },
+                {
+                    test: /\.css$/,
+                    use: [
+                        'style-loader',
+                        { loader: 'css-loader', options: { importLoaders: 1, modules: true } },
+                        'postcss-loader'
+                    ]
                 },
                 {
                     test: /\.less$/,
-                    use: [
-                        'style-loader',
-                        { loader: 'css-loader'},
-                        { loader: 'postcss-loader', options: { extract: false, modules: true, importLoaders: 1 } }
-                    ]
+                    use: [{
+                        loader: "style-loader" // creates style nodes from JS strings
+                    }, {
+                        loader: "css-loader" , options: { importLoaders: 1, modules: true } // translates CSS into CommonJS
+                    }, {
+                        loader: "postcss-loader" // compiles Less to CSS
+                    },
+                    {
+                        loader: "less-loader",
+                    }]
                 }
             ]
         },
