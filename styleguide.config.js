@@ -1,11 +1,11 @@
 const path = require("path");
 
 module.exports = {
-    title: "Sophon Sample Components Library",
+    title: "Sophon Components Library",
     components: 'src/components/**/*.tsx',
     styleguideDir: "dist-docs",
     moduleAliases: {
-        "sophon-sample-components-library": path.resolve(__dirname, "src")
+        "sophon-components-library": path.resolve(__dirname, "src")
     },
 
     webpackConfig: {

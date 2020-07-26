@@ -1,13 +1,10 @@
-A very simple list4.
+A very simple List.
 
 ```jsx
-import { List, ListItem } from "sophon-sample-components-library";
+import { List } from "sophon-components-library";
 
-
-<List dataList={[
-                  { name: 'ha ha ha?' },
+<List dataList={ [{ name: 'ha ha ha?' },
                   { name: 'world22' },
                   { name: 'react33' },
-                  { name: 'react-dom00' },
-                ] } />
+                  { name: 'react-dom9066' }] }/>
 ```
