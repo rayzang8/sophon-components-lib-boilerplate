@@ -1,0 +1,10 @@
+dist/
+lib/
+public/
+config/
+build/
+node_modules/
+example/
+# 样式文件不用eslint check
+src/**/*.css
+src/**/*.less
