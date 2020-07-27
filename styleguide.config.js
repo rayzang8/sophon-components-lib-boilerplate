@@ -32,9 +32,9 @@ module.exports = {
                     use: [{
                         loader: "style-loader" // creates style nodes from JS strings
                     }, {
-                        loader: "css-loader" , options: { importLoaders: 1, modules: true } // translates CSS into CommonJS
+                        loader: "css-loader" , options: { importLoaders: 1, modules: {localIdentName: '[name]_[local]_[hash:base64:5]'} } // translates CSS into CommonJS
                     }, {
-                        loader: "postcss-loader" // compiles Less to CSS
+                        loader: "postcss-loader", // compiles Less to CSS
                     },
                     {
                         loader: "less-loader",
