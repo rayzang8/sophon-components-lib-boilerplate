@@ -16,18 +16,18 @@ export {resolveFile}
 
 export default [
   {
-    input: resolveFile('src/index.ts'),
+    input: resolveFile('src/entry.js'),
     output: {
       file: resolveFile('dist/index.js'),
       format: 'umd',
     }, 
     plugins: [
+      eslint(),
       postcss({
           extract: false,
           modules: true,
           use: ['less'],
       }),
-      eslint(),
       nodeResolve({
           extensions: ['.js', '.jsx', '.ts', '.tsx'], // import 时可以省略后缀名
       }),

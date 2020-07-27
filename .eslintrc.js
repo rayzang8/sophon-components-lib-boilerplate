@@ -28,6 +28,7 @@ module.exports = {
     },
     rules: {
         "@typescript-eslint/explicit-module-boundary-types": "off",
+        // "@typescript-eslint/no-unused-vars": "off",
         // '@typescript-eslint/consistent-type-definitions': 0,
         // '@typescript-eslint/explicit-function-return-type': 0,
         // '@typescript-eslint/generic-type-naming': 0,

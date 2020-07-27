@@ -1,10 +1,10 @@
 A very simple List.
 
 ```jsx
-import { List } from "sophon-components-library";
+// import { List } from "sophon-components-library";
 
 <List dataList={ [{ name: 'ha ha ha?' },
                   { name: 'world22' },
                   { name: 'react33' },
-                  { name: 'react-do6766' }] }/>
+                  { name: 'react-dom' }] }/>
 ```

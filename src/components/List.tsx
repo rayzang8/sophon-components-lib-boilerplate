@@ -1,6 +1,14 @@
 import React from 'react';
 import css from './List.less';
-import {ListProps} from "./List.types";
+
+export interface ListItem {
+  name: string;
+}
+
+export interface ListProps {
+  dataList: ListItem[];
+}
+
 
 class List extends React.Component<ListProps> {
 

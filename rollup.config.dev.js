@@ -18,7 +18,8 @@ setTimeout(()=>{
 }, 1000);
 
 configList.map((config, index) => {
-
+  config.input = resolveFile('src/index.ts'),
+  config.output.file = resolveFile('build/index.js'),
   config.output.sourcemap = true;
 
   if( index === 0 ) {
