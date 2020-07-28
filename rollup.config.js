@@ -1,12 +1,13 @@
-import  { babel } from '@rollup/plugin-babel';
+import { babel } from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
+import external from "rollup-plugin-peer-deps-external";
 import { eslint } from 'rollup-plugin-eslint';
 import postcss from 'rollup-plugin-postcss';
 
 const path = require('path');
-
+const packageJson = require("./package.json");
 
 const resolveFile = function(filePath) {
   return path.join(__dirname, filePath)
@@ -16,12 +17,18 @@ export {resolveFile}
 
 export default [
   {
-    input: resolveFile('src/entry.js'),
+    input: resolveFile('src/index.ts'),
     output: {
       file: resolveFile('dist/index.js'),
       format: 'umd',
+      name: packageJson.name,
+      globals: {
+        "react": "React",
+        "react-dom": "ReactDOM",
+      }
     }, 
     plugins: [
+      external(),
       eslint(),
       postcss({
           extract: false,
@@ -41,4 +48,5 @@ export default [
       })
     ],
   },
+
 ]
