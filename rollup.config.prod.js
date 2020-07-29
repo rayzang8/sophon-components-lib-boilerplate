@@ -38,11 +38,15 @@ configList.push({
   plugins: [
     external(),
     eslint(),
-    postcss({
+    postcss([{
       extract: false,
       modules: true,
       use: ['less'],
-    }),
+    },{
+      extract: false,
+      modules: false,
+      use: ['css'],
+    }]),
     nodeResolve({
       extensions: ['.js', '.jsx', '.ts', '.tsx'], // import 时可以省略后缀名
     }),
