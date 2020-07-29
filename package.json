@@ -26,9 +26,10 @@
     "React",
     "Component Library",
     "Rollup",
+    "Less",
+    "CSS Modules",
     "Babel",
     "Typescript",
-    "Less",
     "ESlint",
     "Styleguidist",
     "Jest React Testing Library"
