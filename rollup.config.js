@@ -5,6 +5,7 @@ import replace from '@rollup/plugin-replace';
 import external from "rollup-plugin-peer-deps-external";
 import { eslint } from 'rollup-plugin-eslint';
 import postcss from 'rollup-plugin-postcss';
+import typescript from "rollup-plugin-typescript2";
 
 const path = require('path');
 const packageJson = require("./package.json");
@@ -26,7 +27,7 @@ export default [
         "react": "React",
         "react-dom": "ReactDOM",
       }
-    }, 
+    },
     plugins: [
       external(),
       eslint(),
@@ -39,6 +40,7 @@ export default [
           extensions: ['.js', '.jsx', '.ts', '.tsx'], // import 时可以省略后缀名
       }),
       commonjs(),
+      typescript(),
       babel({
           exclude: 'node_modules/**',
           extensions: ['.js', '.jsx', '.ts', '.tsx'], // 应用babel编辑规则的文件

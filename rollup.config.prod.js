@@ -7,6 +7,7 @@ import { eslint } from 'rollup-plugin-eslint';
 import postcss from 'rollup-plugin-postcss';
 import configList, {resolveFile} from './rollup.config';
 import { terser } from "rollup-plugin-terser";
+import typescript from "rollup-plugin-typescript2";
 
 process.env.NODE_ENV = 'production';
 
@@ -46,12 +47,13 @@ configList.push({
       extensions: ['.js', '.jsx', '.ts', '.tsx'], // import 时可以省略后缀名
     }),
     commonjs(),
+    typescript(),  // 1.生成d.ts  2.文件解决重导出文件index.ts 中无法引用其它文件 export的接口(interface)的问题
     babel({
       exclude: 'node_modules/**',
       extensions: ['.js', '.jsx', '.ts', '.tsx'], // 应用babel编辑规则的文件
     }),
     replace({
-      'process.env.NODE_ENV': JSON.stringify( 'production' )
+      'process.env.NODE_ENV': JSON.stringify( 'production' ) // 解决 import * as React from "react"写成 import React from "react" 报 'default' is not exported by...的错误
     }),
     terser(),
   ],

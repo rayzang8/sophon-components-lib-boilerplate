@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import List from './components/List';
-// import {ListItem} from "./components/List";
+import List, {ListItem} from './components/List/List';
 
 
-const dataList= [
+const dataList: ListItem[] = [
   { name: 'ha ha ha!!!!!' },
   { name: 'world22' },
   { name: 'react33' },

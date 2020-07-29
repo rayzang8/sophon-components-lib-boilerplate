@@ -1,2 +1,2 @@
-import List from './components/List';
-export {List};
+import List, {ListItem}  from './components/List/List';
+export {List, ListItem};
