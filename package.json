@@ -32,7 +32,8 @@
     "Typescript",
     "ESlint",
     "Styleguidist",
-    "Jest React Testing Library"
+    "Jest React Testing Library",
+    "AntD"
   ],
   "peerDependencies": {
     "antd": "^4.5.1",
