@@ -51,9 +51,9 @@ configList.push({
       extensions: ['.js', '.jsx', '.ts', '.tsx'], // import 时可以省略后缀名
     }),
     commonjs(),
-    typescript(),  // 1.生成d.ts  2.文件解决重导出文件index.ts 中无法引用其它文件 export的接口(interface)的问题
+    typescript({ exclude: ['node_modules/**']}),  // 1.生成d.ts  2.文件解决重导出文件index.ts 中无法引用其它文件 export的接口(interface)的问题
     babel({
-      exclude: 'node_modules/**',
+      exclude: ['node_modules/**'],
       extensions: ['.js', '.jsx', '.ts', '.tsx'], // 应用babel编辑规则的文件
     }),
     replace({

@@ -26,6 +26,7 @@ export default [
       globals: {
         "react": "React",
         "react-dom": "ReactDOM",
+        "antd": "antd",
       }
     },
     plugins: [
@@ -44,9 +45,9 @@ export default [
           extensions: ['.js', '.jsx', '.ts', '.tsx'], // import 时可以省略后缀名
       }),
       commonjs(),
-      typescript(),
+      typescript({ exclude: ['node_modules/**']}),
       babel({
-          exclude: 'node_modules/**',
+          exclude: ['node_modules/**'],
           extensions: ['.js', '.jsx', '.ts', '.tsx'], // 应用babel编辑规则的文件
       }),
       replace({
