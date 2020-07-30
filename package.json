@@ -67,6 +67,7 @@
     "less-loader": "^6.2.0",
     "postcss-loader": "^3.0.0",
     "react": "^16.13.1",
+    "react-docgen-typescript": "^1.20.1",
     "react-dom": "^16.13.1",
     "react-styleguidist": "^11.0.8",
     "rollup": "^2.23.0",

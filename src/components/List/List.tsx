@@ -5,7 +5,11 @@ export interface ListItem {
   name: string;
 }
 
+/**
+ * List properties.
+ */
 interface ListProps {
+  /** ul li形式展示列表， 传入一个有name 属性的对象数组 */
   dataList: ListItem[];
 }
 

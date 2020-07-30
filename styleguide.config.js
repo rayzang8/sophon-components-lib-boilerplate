@@ -7,6 +7,9 @@ module.exports = {
     moduleAliases: {
         "sophon-components-library": path.resolve(__dirname, "src")
     },
+    propsParser: require("react-docgen-typescript").withCustomConfig(
+        "./tsconfig.json",
+    ).parse,
 
     webpackConfig: {
         module: {
