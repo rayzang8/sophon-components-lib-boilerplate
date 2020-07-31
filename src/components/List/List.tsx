@@ -16,15 +16,14 @@ interface ListProps {
 export default class List extends React.Component<ListProps> {
 
   render() {
-    const { dataList = [] } = this.props;
+    const {dataList = []} = this.props;
     return (
       <ul className={css.listItem}>
-        { dataList.map(function(item, index){
-          return ( <li key={index}><span className={css.bgc}>{item.name}</span></li> )
-        }) }
+        { dataList.map(function(item, index) {
+          return ( <li key={index}><span className={css.bgc}>{item.name}</span></li> );
+        })}
       </ul>
-    )
+    );
   }
 }
-
 

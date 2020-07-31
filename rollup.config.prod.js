@@ -1,4 +1,4 @@
-import { babel } from '@rollup/plugin-babel';
+// import { babel } from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
@@ -16,9 +16,7 @@ configList.map((config, index) => {
   config.output.sourcemap = false;
   config.plugins = [
     ...config.plugins,
-    ...[
-      terser()
-    ]
+    terser()
   ];
 
   return config;
@@ -37,7 +35,7 @@ configList.push({
   },
   plugins: [
     external(),
-    eslint(),
+    eslint({fix: true}),
     postcss([{
       extract: false,
       modules: true,
@@ -51,11 +49,11 @@ configList.push({
       extensions: ['.js', '.jsx', '.ts', '.tsx'], // import 时可以省略后缀名
     }),
     commonjs(),
-    typescript({ exclude: ['node_modules/**']}),  // 1.生成d.ts  2.文件解决重导出文件index.ts 中无法引用其它文件 export的接口(interface)的问题
-    babel({
-      exclude: ['node_modules/**'],
-      extensions: ['.js', '.jsx', '.ts', '.tsx'], // 应用babel编辑规则的文件
-    }),
+    typescript(),
+    // babel({
+    //   exclude: ['node_modules/**'],
+    //   extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    // }),
     replace({
       'process.env.NODE_ENV': JSON.stringify( 'production' ) // 解决 import * as React from "react"写成 import React from "react" 报 'default' is not exported by...的错误
     }),
