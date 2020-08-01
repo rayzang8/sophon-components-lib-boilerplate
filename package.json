@@ -33,7 +33,8 @@
     "ESlint",
     "Styleguidist",
     "Jest React Testing Library",
-    "AntD"
+    "AntD",
+    "i18next"
   ],
   "peerDependencies": {
     "antd": "^4.5.1",
@@ -82,5 +83,9 @@
     "ts-jest": "^26.1.4",
     "typescript": "^3.9.7",
     "webpack": "^4.44.0"
+  },
+  "dependencies": {
+    "i18next": "^19.6.3",
+    "react-i18next": "^11.7.0"
   }
 }

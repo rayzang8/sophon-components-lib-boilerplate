@@ -7,7 +7,7 @@ import {CheckboxCopy} from "../Checkbox";
 const dataList = [{ name: 'ha ha ha?' },
                    { name: 'world22' },
                    { name: 'react33' },
-                   { name: 'react-dom665' }];
+                   { name: 'react-dom21665' }];
 <>
   <List dataList={dataList}/>
   <CheckboxCopy test={"xxx"}/>
