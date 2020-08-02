@@ -42,7 +42,15 @@ module.exports = {
                     {
                         loader: "less-loader",
                     }]
-                }
+                },
+                {test: /\.eot$/, use: ['file-loader']},
+                {test: /\.(woff|woff2)$/, use: ['url-loader']},
+                {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, use: ['file-loader']},
+                {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, use: ['file-loader']},
+                {
+                    test: /\.(png|jpg|gif)$/,
+                    use: ['url-loader'],
+                },
             ]
         },
         resolve: {

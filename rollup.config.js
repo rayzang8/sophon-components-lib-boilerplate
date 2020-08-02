@@ -6,6 +6,7 @@ import external from "rollup-plugin-peer-deps-external";
 import { eslint } from 'rollup-plugin-eslint';
 import postcss from 'rollup-plugin-postcss';
 import typescript from "rollup-plugin-typescript2";
+import copy from 'rollup-plugin-copy';
 
 const path = require('path');
 const packageJson = require("./package.json");
@@ -50,6 +51,9 @@ export default [
       //     exclude: ['node_modules/**'],
       //     extensions: ['.js', '.jsx', '.ts', '.tsx'], // 应用babel编辑规则的文件
       // }),
+      copy({
+          targets: [{src: 'src/icon-fonts/fonts', dest: ['dist/', 'example/']}]
+      }),
       replace({
         'process.env.NODE_ENV': JSON.stringify( 'production' )
       })
