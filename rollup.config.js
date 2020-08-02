@@ -5,6 +5,7 @@ import replace from '@rollup/plugin-replace';
 import external from "rollup-plugin-peer-deps-external";
 import { eslint } from 'rollup-plugin-eslint';
 import postcss from 'rollup-plugin-postcss';
+import stylelint from 'rollup-plugin-stylelint';
 import typescript from "rollup-plugin-typescript2";
 
 const path = require('path');
@@ -32,6 +33,12 @@ export default [
     plugins: [
       external(),
       eslint({fix: true}),
+      stylelint({
+          fix: false,
+          include: ['src/**/*.less'],
+          // syntax: 'less',
+          quiet: false,
+      }),
       postcss([{
           extract: false,
           modules: true,
