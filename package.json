@@ -34,7 +34,8 @@
     "Styleguidist",
     "Jest React Testing Library",
     "AntD",
-    "i18next"
+    "i18next",
+    "stylelint"
   ],
   "peerDependencies": {
     "antd": "^4.5.1",
