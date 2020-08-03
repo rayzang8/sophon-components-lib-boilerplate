@@ -32,6 +32,7 @@ module.exports = {
                 },
                 {
                     test: /\.less$/,
+                    exclude: /node_modules/,
                     use: [{
                         loader: "style-loader" // creates style nodes from JS strings
                     }, {
@@ -41,8 +42,33 @@ module.exports = {
                     },
                     {
                         loader: "less-loader",
+                        options: {
+                          lessOptions: {
+                            javascriptEnabled: true
+                          }
+                        }
                     }]
                 },
+              {
+                test: /\.less$/,
+                include: [/\/node_modules\/antd\/es\//, /\\node_modules\\antd\\es\\/],
+                use: [
+                  {
+                    loader: "style-loader" // creates style nodes from JS strings
+                  }, {
+                    loader: 'css-loader', // translates CSS into CommonJS
+                  },
+                  {
+                    loader: 'less-loader',
+                    options: {
+                      lessOptions: {
+                        javascriptEnabled: true
+                      }
+                    }
+                  },
+                ],
+              },
+
                 {test: /\.eot$/, use: ['file-loader']},
                 {test: /\.(woff|woff2)$/, use: ['url-loader']},
                 {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, use: ['file-loader']},
