@@ -30,6 +30,7 @@ configList.push({
     globals: {
       "react": "React",
       "react-dom": "ReactDOM",
+      "antd": "antd",
     },
     sourcemap: false,
   },
