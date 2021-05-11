@@ -97,7 +97,7 @@
     "@types/lodash": "^4.14.158",
     "classnames": "^2.2.6",
     "i18next": "^19.6.3",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "react-i18next": "^11.7.0"
   }
 }
